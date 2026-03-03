@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #0a0a0f;
+  --bg-card: #111118;
+  --bg-elevated: #16161f;
+  --border-dim: #1e1e2e;
+  --border-bright: #2a2a3e;
+  --neon-green: #00ff88;
+  --neon-purple: #7c3aed;
+  --neon-blue: #00b4ff;
+  --text-primary: #e2e2e2;
+  --text-muted: #888899;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--neon-purple); }
+
+/* Neon glow utility */
+.neon-glow { text-shadow: 0 0 20px rgba(0,255,136,0.5); }
+.neon-border { border-color: var(--neon-green); box-shadow: 0 0 15px rgba(0,255,136,0.1); }
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00ff88, #7c3aed, #00b4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-bright);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+.ticker-content {
+  display: inline-block;
+  animation: ticker 40s linear infinite;
+  white-space: nowrap;
+}
+
+/* Risk badge colors */
+.badge-safe     { color: #00ff88; border-color: #00ff8840; background: #00ff8810; }
+.badge-moderate { color: #fbbf24; border-color: #fbbf2440; background: #fbbf2410; }
+.badge-high     { color: #f97316; border-color: #f9731640; background: #f9731610; }
+.badge-scam     { color: #ff3333; border-color: #ff333340; background: #ff333310; }
+
+/* Scanline effect on hero */
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.05) 2px,
+    rgba(0,0,0,0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}

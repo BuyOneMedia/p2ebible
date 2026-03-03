@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": "./agents/dist",
+    "rootDir": "./agents",
+    "resolveJsonModule": true
+  },
+  "include": ["agents/**/*.ts"],
+  "exclude": ["node_modules", "src", ".next"]
+}
