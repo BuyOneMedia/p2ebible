@@ -28,6 +28,7 @@ module.exports = {
       env_file: '/var/www/p2ebible.com/.env',
       env: {
         NODE_ENV: 'production',
+        DATABASE_PATH: '/var/www/p2ebible.com/p2ebible.db',
       },
       max_memory_restart: '300M',
       exp_backoff_restart_delay: 100,
@@ -46,6 +47,7 @@ module.exports = {
       env_file: '/var/www/p2ebible.com/.env',
       env: {
         NODE_ENV: 'production',
+        DATABASE_PATH: '/var/www/p2ebible.com/p2ebible.db',
       },
       max_memory_restart: '300M',
       exp_backoff_restart_delay: 100,

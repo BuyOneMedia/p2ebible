@@ -159,8 +159,8 @@ async function runRssFeeds(): Promise<NewGame[]> {
         games.push({
           slug,
           name: title,
-          description: item.contentSnippet?.slice(0, 300) || null,
-          website_url: item.link || null,
+          description: item.contentSnippet?.slice(0, 300) || undefined,
+          website_url: item.link || undefined,
           source: 'rss',
           source_url: item.link || feed.url,
         });
