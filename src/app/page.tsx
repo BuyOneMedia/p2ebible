@@ -6,7 +6,7 @@ import GameCard from '@/components/GameCard';
 import RiskBadge from '@/components/RiskBadge';
 import {
   Shield, Zap, TrendingUp, ExternalLink,
-  Users, ChevronRight, AlertOctagon
+  Users, ChevronRight, AlertOctagon, BookOpen
 } from 'lucide-react';
 
 export const revalidate = 300; // Revalidate every 5 minutes
