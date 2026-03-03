@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getDb } from '@/lib/db';
 import type { GameWithRisk, AffiliateLink } from '@/lib/db';
 import GameCard from '@/components/GameCard';
 import RiskBadge from '@/components/RiskBadge';
 import {
-  BookOpen, Shield, Zap, TrendingUp, ExternalLink,
+  Shield, Zap, TrendingUp, ExternalLink,
   Users, ChevronRight, AlertOctagon
 } from 'lucide-react';
 
@@ -101,13 +102,24 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_70%_60%,rgba(124,58,237,0.05),transparent)] pointer-events-none" />
 
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00ff88]/20 bg-[#00ff88]/5 text-[#00ff88] text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00ff88]/20 bg-[#00ff88]/5 text-[#00ff88] text-xs font-medium mb-8">
             <Zap className="w-3 h-3" /> AI agents running 24/7 — updated every 6 hours
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">
-            Your Web3 Gaming{' '}
-            <span className="gradient-text">Bible</span>
+          {/* Logo hero */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo.png"
+              alt="P2E Bible"
+              width={480}
+              height={120}
+              priority
+              className="w-auto max-w-[340px] sm:max-w-[480px] h-auto drop-shadow-[0_0_30px_rgba(0,255,136,0.2)]"
+            />
+          </div>
+
+          <h1 className="text-xl sm:text-2xl font-semibold mb-4 tracking-tight text-[#888899]">
+            Your Web3 Gaming Intelligence Platform
           </h1>
           <p className="text-lg sm:text-xl text-[#888899] max-w-2xl mx-auto mb-2">
             The companion to the book — but alive. AI agents hunt new games, detect scams,

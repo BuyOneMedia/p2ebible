@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Shield, Gamepad2, BookOpen, Home, Settings } from 'lucide-react';
+import { Shield, Gamepad2, Home, Settings } from 'lucide-react';
 
 const nav = [
   { href: '/',            label: 'Home',       icon: Home },
@@ -17,11 +18,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <BookOpen className="w-6 h-6 text-[#00ff88] group-hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.8)] transition-all" />
-            <span className="font-bold text-lg tracking-tight">
-              P2E<span className="text-[#00ff88]">Bible</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="P2E Bible"
+              width={160}
+              height={40}
+              priority
+              className="h-10 w-auto object-contain group-hover:drop-shadow-[0_0_12px_rgba(0,255,136,0.4)] transition-all duration-300"
+            />
           </Link>
 
           {/* Nav links */}

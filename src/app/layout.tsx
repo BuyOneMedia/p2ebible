@@ -9,10 +9,25 @@ export const metadata: Metadata = {
   title: 'P2E Bible — Your Web3 Gaming Companion',
   description: 'The living companion to the P2E Bible book. AI-powered game discovery, real-time scam radar, and daily-updated resources for Web3 gamers.',
   keywords: ['play to earn', 'P2E', 'web3 gaming', 'crypto games', 'NFT games', 'GameFi', 'scam radar'],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'P2E Bible — AI-Powered Web3 Gaming Intelligence',
     description: 'Scout new games. Detect scams before they rug you. Earn more — smarter.',
     type: 'website',
+    url: 'https://p2ebible.com',
+    images: [{ url: '/logo.png', width: 800, height: 200, alt: 'P2E Bible' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'P2E Bible — Web3 Gaming Intelligence',
+    description: 'AI-powered game discovery + scam radar for the Web3 gaming world.',
+    images: ['/logo.png'],
   },
 };
 

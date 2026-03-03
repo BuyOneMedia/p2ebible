@@ -22,14 +22,9 @@ module.exports = {
     // ── Scout Agent ─────────────────────────────────────────────────────
     {
       name: 'p2ebible-scout',
-      script: 'node',
-      args: 'agents/dist/scout.js',
+      script: '/var/www/p2ebible.com/agents/run-scout.sh',
+      interpreter: 'bash',
       cwd: '/var/www/p2ebible.com',
-      env_file: '/var/www/p2ebible.com/.env',
-      env: {
-        NODE_ENV: 'production',
-        DATABASE_PATH: '/var/www/p2ebible.com/p2ebible.db',
-      },
       max_memory_restart: '300M',
       exp_backoff_restart_delay: 100,
       max_restarts: 5,
@@ -41,14 +36,9 @@ module.exports = {
     // ── Detective Agent ─────────────────────────────────────────────────
     {
       name: 'p2ebible-detective',
-      script: 'node',
-      args: 'agents/dist/detective.js',
+      script: '/var/www/p2ebible.com/agents/run-detective.sh',
+      interpreter: 'bash',
       cwd: '/var/www/p2ebible.com',
-      env_file: '/var/www/p2ebible.com/.env',
-      env: {
-        NODE_ENV: 'production',
-        DATABASE_PATH: '/var/www/p2ebible.com/p2ebible.db',
-      },
       max_memory_restart: '300M',
       exp_backoff_restart_delay: 100,
       max_restarts: 5,
